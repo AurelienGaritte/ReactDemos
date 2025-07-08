@@ -74,3 +74,5 @@ Extension VSCode pour pack icônes : Material Icon Theme
 
 Raccourcis pour émoji : Windows + ;
 Raccourcis anti-Aurélien : Windows + L (DÈS QUE VOUS QUITTEZ VOTRE PC)
+
+Cours donné par Aude Beurive, tous les mérites lui reviennent ! 🤓
