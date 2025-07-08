@@ -1,0 +1,115 @@
+/* Exo5.css */
+
+/* Container principal en deux colonnes */
+.exo5-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+}
+
+/* Style du formulaire */
+.task-form {
+  flex: 1 1 300px;
+  background: #ffeef0;    /* pastel rose */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.task-form h2 {
+  margin-bottom: 1rem;
+  color: #d6336c;
+}
+
+.task-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffdfe2;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.task-form input[type="text"]:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+  border-color: #ff85a2;
+  outline: none;
+}
+
+.task-form span {
+  display: block;
+  color: #b02a37;
+  font-size: 0.9rem;
+  margin-top: -0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Bouton submit */
+.task-form input[type="submit"] {
+  background: #74c0fc;    /* pastel bleu */
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.task-form input[type="submit"]:hover {
+  background: #4dabf7;
+  transform: translateY(-2px);
+}
+
+/* Style de la liste des tâches */
+.task-list {
+  flex: 2 1 400px;
+  background: #e3fafc;    /* pastel turquoise */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.task-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-list th,
+.task-list td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.task-list thead {
+  background: #c5f6fa;    /* pastel plus profond */
+}
+
+.task-list th {
+  font-weight: 600;
+}
+
+.task-list tr:nth-child(even) {
+  background: #f1faff;
+}
+
+.task-list input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #63e6be;   /* pastel vert */
+  cursor: pointer;
+}

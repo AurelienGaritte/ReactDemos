@@ -1,0 +1,85 @@
+.flex-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles communs aux cards “product” et “productpromo” */
+.product,
+.productpromo {
+    width: 300px;
+    aspect-ratio: 2/3;
+    position: relative;             /* Pour gérer la hiérarchie interne */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+}
+
+/* Arrière-plan image : toujours tout derrière */
+.product img,
+.productpromo img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: -1;                     /* <— Fond du fond */
+}
+
+/* Boutons communs : toujours devant l’image */
+.product button,
+.productpromo button {
+    position: relative;              /* Pour superposer le ::before correctement */
+    z-index: 2;                      /* <— Avant-vague et avant-image */
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    overflow: hidden;                /* Pour cacher la vague hors du bouton */
+}
+
+/* Styles spécifiques au produit standard */
+.product button {
+    border: 2px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.5);
+}
+.product button:hover {
+    background-color: rgba(40, 167, 69, 0.7);
+}
+
+/* Styles spécifiques à la promo */
+.productpromo {
+    background-color: rgba(255, 0, 0, 0.08);
+    border: 2px solid #ff0000;
+}
+
+.productpromo button {
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.5);
+    
+    &:hover {
+        background-color: rgba(220, 53, 69, 0.8);
+    }
+    
+
+    &::before    { content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 20%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;                      /* <— Juste sous le bouton */
+    animation: wave 4s linear infinite; }
+
+}
+
+
